@@ -158,8 +158,11 @@ a:hover {
 #contact {
   background-color: #ffffff;
   color: #000000;
-  padding: 40px 20px;
-  text-align: center;
+}
+
+#contact h2,
+#contact p {
+  color: #000000;
 }
 
 .waOrderButton {
