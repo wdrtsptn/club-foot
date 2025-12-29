@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('click', () => {
       // === PRICING UI ===
       priceItems.forEach(i => {
-        i.classList.remove('active');
-        i.style.display = 'none';
-      });
+  i.classList.remove('active');
+  i.classList.add('inactive');
+});
 
-      item.classList.add('active');
-      item.style.display = 'flex';
+item.classList.add('active');
+item.classList.remove('inactive');
 
       // === SIMPAN PAKET ===
       selectedPlan = item.dataset.plan;
