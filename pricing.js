@@ -1,24 +1,29 @@
-const priceItems = document.querySelectorAll('.price-item');
+document.addEventListener("DOMContentLoaded", function () {
+  const priceItems = document.querySelectorAll(".price-item");
 
-priceItems.forEach(item => {
-  item.addEventListener('click', () => {
+  // DEBUG: pastiin item kebaca
+  console.log("Pricing items:", priceItems.length);
 
-    // kalau item sudah aktif → reset semua
-    if (item.classList.contains('active')) {
+  priceItems.forEach(item => {
+    item.addEventListener("click", function () {
+
+      // kalau item aktif → reset
+      if (this.classList.contains("active")) {
+        priceItems.forEach(i => {
+          i.classList.remove("active", "hidden");
+        });
+        return;
+      }
+
+      // sembunyiin semua
       priceItems.forEach(i => {
-        i.classList.remove('active', 'hidden');
+        i.classList.remove("active");
+        i.classList.add("hidden");
       });
-      return;
-    }
 
-    // reset dulu
-    priceItems.forEach(i => {
-      i.classList.remove('active');
-      i.classList.add('hidden');
+      // aktifin yg diklik
+      this.classList.add("active");
+      this.classList.remove("hidden");
     });
-
-    // aktifkan yang diklik
-    item.classList.add('active');
-    item.classList.remove('hidden');
   });
 });
