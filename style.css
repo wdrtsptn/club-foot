@@ -153,3 +153,16 @@ a:hover {
 #contact {
   text-align: center;
 }
+
+/* FLOW SECTION */
+.flow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+@media (max-width: 768px) {
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+}
