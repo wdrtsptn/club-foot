@@ -149,6 +149,11 @@ a:hover {
   display: none;
 }
 
+.pricing-cta {
+  margin-top: 48px;
+  text-align: center;
+}
+
 /* CONTACT */
 #contact {
   text-align: center;
