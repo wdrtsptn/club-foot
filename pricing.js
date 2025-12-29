@@ -1,29 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const priceItems = document.querySelectorAll(".price-item");
+const priceItems = document.querySelectorAll('.price-item');
+const waButton = document.getElementById('waButton');
 
-  // DEBUG: pastiin item kebaca
-  console.log("Pricing items:", priceItems.length);
+let selectedPlan = '';
 
-  priceItems.forEach(item => {
-    item.addEventListener("click", function () {
+priceItems.forEach(item => {
+  item.addEventListener('click', () => {
+    selectedPlan = item.dataset.plan;
 
-      // kalau item aktif → reset
-      if (this.classList.contains("active")) {
-        priceItems.forEach(i => {
-          i.classList.remove("active", "hidden");
-        });
-        return;
-      }
+    priceItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
 
-      // sembunyiin semua
-      priceItems.forEach(i => {
-        i.classList.remove("active");
-        i.classList.add("hidden");
-      });
+    const message = `
+Halo Club Foot,
+saya mau pesan paket ${selectedPlan}.
 
-      // aktifin yg diklik
-      this.classList.add("active");
-      this.classList.remove("hidden");
-    });
+Jumlah sepatu:
+Jenis sepatu:
+Catatan tambahan:
+
+Terima kasih.
+    `;
+
+    const encodedMessage = encodeURIComponent(message);
+    waButton.href = `https://wa.me/6285797939120?text=${encodedMessage}`;
   });
 });
