@@ -20,14 +20,17 @@ item.classList.remove('inactive');
 
       // === TEMPLATE WHATSAPP ===
       const message =
-`Halo Club Foot,
-saya mau pesan paket ${selectedPlan}.
+`Helo Club Foot,
+I’d like to order a shoe cleaning service. ${selectedPlan}.
 
-Jumlah sepatu:
-Jenis sepatu:
-Catatan tambahan:
+Name:
+Phone Number:
+Date:
+Payment:
+Number of Pairs:
+Additional Notes:
 
-Terima kasih.`;
+Thank you.`;
 
       const encodedMessage = encodeURIComponent(message);
       waButton.href = `https://wa.me/6285797939120?text=${encodedMessage}`;
