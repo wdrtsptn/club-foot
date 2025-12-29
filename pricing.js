@@ -21,7 +21,7 @@ item.classList.remove('inactive');
       // === TEMPLATE WHATSAPP ===
       const message =
 `Helo Club Foot,
-I’d like to order a shoe cleaning service. ${selectedPlan}.
+I’d like to order a shoe cleaning service ${selectedPlan}.
 
 Name:
 Phone Number:
