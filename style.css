@@ -154,6 +154,10 @@ a:hover {
   text-align: center;
 }
 
+.waOrderButton {
+  margin-bottom: 32px;
+}
+
 /* FLOW SECTION */
 .flow-grid {
   display: grid;
