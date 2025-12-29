@@ -1,1 +1,40 @@
+/* RESET */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/*GLOBAL*/
+body{
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/*SECTION*/
+section {
+  padding: 80px 10%;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing:-1px
+}
+h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+p {
+  color: #cccccc;
+}
+
+/*HERO*/
+#hero {
+  
