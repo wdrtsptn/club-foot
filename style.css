@@ -114,6 +114,12 @@ a:hover {
   padding: 32px;
   border: 1px solid #1a1a1a;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 220px;
 }
 
 .price-item strong {
