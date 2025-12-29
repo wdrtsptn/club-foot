@@ -1,27 +1,38 @@
-const priceItems = document.querySelectorAll('.price-item');
-const waButton = document.getElementById('waButton');
 
-let selectedPlan = '';
+document.addEventListener('DOMContentLoaded', () => {
+  const priceItems = document.querySelectorAll('.price-item');
+  const waButton = document.getElementById('waOrderButton');
 
-priceItems.forEach(item => {
-  item.addEventListener('click', () => {
-    selectedPlan = item.dataset.plan;
+  let selectedPlan = '';
 
-    priceItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+  console.log('pricing.js loaded');
 
-    const message = `
-Halo Club Foot,
+  priceItems.forEach(item => {
+    item.addEventListener('click', () => {
+      selectedPlan = item.dataset.plan;
+      console.log('Selected plan:', selectedPlan);
+
+      const message =
+`Halo Club Foot,
 saya mau pesan paket ${selectedPlan}.
 
 Jumlah sepatu:
 Jenis sepatu:
 Catatan tambahan:
 
-Terima kasih.
-    `;
+Terima kasih.`;
 
-    const encodedMessage = encodeURIComponent(message);
-    waButton.href = `https://wa.me/6285797939120?text=${encodedMessage}`;
+      const encodedMessage = encodeURIComponent(message);
+      waButton.href = `https://wa.me/6285797939120?text=${encodedMessage}`;
+
+      console.log('WA link updated');
+    });
+  });
+
+  waButton.addEventListener('click', (e) => {
+    if (!selectedPlan) {
+      e.preventDefault();
+      alert('Silakan pilih paket terlebih dahulu.');
+    }
   });
 });
