@@ -117,15 +117,15 @@ a:hover {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 
   min-height: 220px;
 }
 
 .price-item strong {
-  display: block;
-  margin-top: 16px;
-  font-size: 24px;
+  margin-top: auto;          /* KUNCI ALIGN BAWAH */
+  font-size: 26px;
+  letter-spacing: 1px;
 }
 
 /* CONTACT */
