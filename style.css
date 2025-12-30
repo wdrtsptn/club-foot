@@ -233,4 +233,13 @@ a:hover {
     font-size: 15px;
     padding: 14px 28px;
   }
+
+@media (max-width: 768px) {
+  .pricing-list {
+    flex-direction: column;
+  }
+
+  .price-item {
+    width: 100%;
+  }
 }
