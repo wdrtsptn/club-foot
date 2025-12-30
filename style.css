@@ -188,40 +188,39 @@ a:hover {
   }
 }
 
-/*MOBILE OPTIMIZATION*/
-@media (max-width:768px) {
-  section{
-    padding:64px 6%;
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+  section {
+    padding: 64px 6%;
   }
 
-h1{
-  font-size:40px;
-  line-height:1,2;
-}
+  h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
 
-h2{
-  font-size:28px;
-}
+  h2 {
+    font-size: 28px;
+  }
 
-h3{
-  font-size:18px;
-}
+  h3 {
+    font-size: 18px;
+  }
 
-p{
-  font-size:16px;
-  line-height:1,7;
-}
- /* SERVICES */
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
   .service-item p {
     font-size: 15px;
   }
 
-  /* PROCESS & ORDER */
   .process-list li p {
     font-size: 15px;
   }
 
-  /* PRICING */
   .price-item strong {
     font-size: 26px;
   }
@@ -229,8 +228,7 @@ p{
   .price-item h3 {
     font-size: 20px;
   }
-  
-  /* CTA BUTTON */
+
   a {
     font-size: 15px;
     padding: 14px 28px;
