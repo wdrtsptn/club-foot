@@ -51,6 +51,12 @@ p {
   margin: 24px 0;
 }
 
+.scroll-hint {
+  margin-top: 16px;
+  font-weight: normal;
+  color: #aaa;
+}
+
 /* BUTTON */
 a {
   display: inline-block;
