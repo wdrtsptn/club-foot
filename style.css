@@ -264,3 +264,40 @@ a:hover {
     font-size: 12px;
   }
 }
+
+.toggle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.togle-btn {
+  width:100%;
+  padding:18px;
+  background: transparent;
+  border:1px soliid #fff;
+  color: #fff;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  text-align: center;
+  transition:all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background:#fff;
+  color:#000;
+}
+
+.toggle-content {
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:all 0.4s ease;
+}
+
+.toggle-content.active{
+  max-height:2000px;
+  opacity:1;
+  margin-top:16px;
+}
