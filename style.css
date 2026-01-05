@@ -1,11 +1,11 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
   background: #0a0a0a;
   color: #ffffff;
@@ -13,7 +13,6 @@ body {
   line-height: 1.6;
 }
 
-/* SECTION */
 section {
   padding: 80px 10%;
   border-bottom: 1px solid #1a1a1a;
@@ -38,7 +37,7 @@ p {
   color: #cccccc;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -57,7 +56,7 @@ p {
   color: #aaa;
 }
 
-/* BUTTON */
+/* ================= BUTTON GLOBAL ================= */
 a {
   display: inline-block;
   margin-top: 24px;
@@ -74,7 +73,7 @@ a:hover {
   color: #000000;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -86,14 +85,55 @@ a:hover {
   border: 1px solid #1a1a1a;
 }
 
-/* PROCESS */
+/* ================= PROCESS / ORDER ================= */
 .process-list {
   list-style: none;
   display: grid;
   gap: 24px;
 }
 
-/* GALLERY */
+/* ================= TOGGLE BUTTON ================= */
+.toggle-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 16px 24px;
+  margin: 24px 0 12px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.toggle-btn .icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* ================= TOGGLE CONTENT ================= */
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.toggle-content p {
+  padding: 12px 0 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* ================= GALLERY ================= */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -109,7 +149,7 @@ a:hover {
   color: #666;
 }
 
-/* PRICING */
+/* ================= PRICING ================= */
 .pricing-list {
   display: flex;
   gap: 24px;
@@ -133,14 +173,12 @@ a:hover {
   letter-spacing: 1px;
 }
 
-/* sembunyikan deskripsi dulu */
 .price-desc {
   display: none;
   margin-top: 24px;
   color: #ccc;
 }
 
-/* ACTIVE STATE */
 .price-item.active {
   flex: 3;
   border-color: #ffffff;
@@ -150,17 +188,12 @@ a:hover {
   display: block;
 }
 
-/* HIDE OTHERS */
-.price-item.hidden {
-  display: none;
-}
-
 .pricing-cta {
   margin-top: 48px;
   text-align: center;
 }
 
-/* CONTACT */
+/* ================= CONTACT / FOOTER ================= */
 #contact {
   background-color: #ffffff;
   color: #000000;
@@ -174,27 +207,20 @@ a:hover {
 
 #contact * {
   color: #000000 !important;
-  }
 }
 
 .waOrderButton {
   margin-bottom: 15px;
 }
 
-/* FLOW SECTION */
+/* ================= FLOW GRID ================= */
 .flow-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
 }
 
-@media (max-width: 768px) {
-  .flow-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* MOBILE OPTIMIZATION */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   section {
@@ -210,38 +236,16 @@ a:hover {
     font-size: 28px;
   }
 
-  h3 {
-    font-size: 18px;
-  }
-
   p {
     font-size: 16px;
     line-height: 1.7;
   }
 
-  .service-item p {
-    font-size: 15px;
-  }
-
+  .service-item p,
   .process-list li p {
     font-size: 15px;
   }
 
-  .price-item strong {
-    font-size: 26px;
-  }
-
-  .price-item h3 {
-    font-size: 20px;
-  }
-
-  a {
-    font-size: 15px;
-    padding: 14px 28px;
-  }
-
-@media (max-width: 768px) {
-  /* PRICING */
   .pricing-list {
     flex-direction: column;
   }
@@ -250,53 +254,24 @@ a:hover {
     width: 100%;
   }
 
-  /* FOOTER */
   #contact {
     padding: 32px 6%;
   }
 
   #contact h2 {
     font-size: 20px;
-    line-height: 1.3;
   }
 
   #contact p {
     font-size: 12px;
   }
-}
 
-.toggle-btn {
-  width: 100%;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 16px 20px;
-  margin: 16px 0;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
 
-.toggle-btn:hover {
-  background: rgba(255,255,255,0.05);
-}
-
-.toggle-btn .icon {
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.toggle-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-.toggle-content p {
-  padding: 12px 4px 20px;
-  font-size: 13px;
-  line-height: 1.6;
+  a {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
 }
