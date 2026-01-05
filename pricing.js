@@ -1,27 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ================= PRICING ================= */
   const priceItems = document.querySelectorAll('.price-item');
   const waButton = document.getElementById('waOrderButton');
-
   let selectedPlan = '';
 
   priceItems.forEach(item => {
     item.addEventListener('click', () => {
-      // === PRICING UI ===
-      priceItems.forEach(i => {
-  i.classList.remove('active');
-  i.classList.add('inactive');
-});
 
-item.classList.add('active');
-item.classList.remove('inactive');
+      priceItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
 
-      // === SIMPAN PAKET ===
       selectedPlan = item.dataset.plan;
 
-      // === TEMPLATE WHATSAPP ===
       const message =
-`Helo Club Foot,
-I’d like to order a shoe cleaning service ${selectedPlan}.
+`Hello Club Foot,
+I’d like to order a shoe cleaning service: ${selectedPlan}
 
 Name:
 Phone Number:
@@ -32,43 +26,32 @@ Additional Notes:
 
 Thank you.`;
 
-      const encodedMessage = encodeURIComponent(message);
-      waButton.href = `https://wa.me/6285797939120?text=${encodedMessage}`;
+      waButton.href =
+        `https://wa.me/6285797939120?text=${encodeURIComponent(message)}`;
     });
   });
 
-  // === PROTEK TOMBOL WA ===
-  waButton.addEventListener('click', (e) => {
+  waButton.addEventListener('click', e => {
     if (!selectedPlan) {
       e.preventDefault();
-      alert('Silakan pilih paket terlebih dahulu.');
+      alert('Pilih paket dulu bro.');
     }
   });
-});
 
-const toggleButons =
-  document.querySelectorAll('.toggle-btn');
+  /* ================= TOGGLE PROCESS / ORDER ================= */
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.icon');
 
-toggleButtons.forEach(btn => {
-  btn.addEventListener('click',() => {
-    const targetId = btn.dataset.target;
-    const content = document.getElementById(targetId);
-
-    content.classList.toggle('active');
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.textContent = '+';
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.textContent = '−';
+      }
+    });
   });
-});
 
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
-    const icon = btn.querySelector('.icon');
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      icon.textContent = '+';
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.textContent = '−';
-    }
-  });
 });
