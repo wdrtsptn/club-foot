@@ -57,3 +57,18 @@ toggleButtons.forEach(btn => {
     content.classList.toggle('active');
   });
 });
+
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.icon');
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      icon.textContent = '+';
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.textContent = '−';
+    }
+  });
+});
